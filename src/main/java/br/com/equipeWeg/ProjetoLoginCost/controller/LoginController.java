@@ -24,10 +24,10 @@ public class LoginController {
 
         if (cadastroUsuario != null && cadastroUsuario.getSenha().equals(usuario.getSenha())) {
             response.put("message", "Login Realizado com Sucesso!");
-            return ResponseEntity.ok(response); // Retorna JSON { "message": "Login Realizado com Sucesso!" }
+            return ResponseEntity.ok(response);
         } else {
             response.put("error", "Credenciais incorretas!");
-            return ResponseEntity.status(401).body(response); // Retorna JSON { "error": "Credenciais incorretas!" }
+            return ResponseEntity.status(401).body(response);
         }
     }
 }

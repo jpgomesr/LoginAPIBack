@@ -51,7 +51,7 @@ public class CadastroUsuario {
         if(this.email.contains("@")){
             return this.email;
         }else {
-            return "Email invalido";
+            throw new RuntimeException("Email Invalido");
         }
 
     }
@@ -64,7 +64,7 @@ public class CadastroUsuario {
         if(this.senha.length() >= 6){
             return this.senha;
         }
-        return "Senha invalida";
+        throw new RuntimeException("Senha Invalida");
     }
 
     public void setSenha(String senha) {

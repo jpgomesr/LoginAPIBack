@@ -18,11 +18,9 @@ public class ProdutoController {
 
     @PostMapping
     public CadastroProduto createProduto(@RequestBody CadastroProduto produto) {
-
-        CadastroProduto produtoSave = new CadastroProduto(produto.getNome(), produto.getDescricao(), produto.getValor(),produto.getImagem(), produto.getSku());
-        repository.save(produtoSave);
-
-        System.out.println(produtoSave);
+        repository.save(produto);
+        System.out.println(produto);
         return produto;
     }
+
 }

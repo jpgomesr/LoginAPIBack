@@ -48,7 +48,12 @@ public class CadastroUsuario {
     }
 
     public String getEmail() {
-        return email;
+        if(this.email.contains("@")){
+            return this.email;
+        }else {
+            return "Email invalido";
+        }
+
     }
 
     public void setEmail(String email) {
@@ -56,7 +61,10 @@ public class CadastroUsuario {
     }
 
     public String getSenha() {
-        return senha;
+        if(this.senha.length() >= 6){
+            return this.senha;
+        }
+        return "Senha invalida";
     }
 
     public void setSenha(String senha) {

@@ -18,6 +18,8 @@ public class CadastroUsuario {
     private String email;
     @Column
     private String senha;
+    @Column
+    private boolean admin;
 
     public CadastroUsuario() {
         super();
@@ -79,6 +81,14 @@ public class CadastroUsuario {
         this.id = id;
     }
 
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public boolean getAdmin() {
+        return admin;
+    }
+
     @Override
     public String toString() {
         return "CadastroUsuario{" +
@@ -87,6 +97,7 @@ public class CadastroUsuario {
                 ", sobrenome='" + sobrenome + '\'' +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
+                ", admin=" + admin +
                 '}';
     }
 }

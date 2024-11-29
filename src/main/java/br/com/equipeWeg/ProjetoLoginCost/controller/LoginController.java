@@ -30,4 +30,24 @@ public class LoginController {
             return ResponseEntity.status(401).body(response);
         }
     }
+
+    @GetMapping("/email/{email}")
+    public ResponseEntity<CadastroUsuario> buscarUsuarioPorEmail(@PathVariable String email) {
+        CadastroUsuario usuario = repository.findByEmail(email);
+        if (usuario != null) {
+            return ResponseEntity.ok(usuario);
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<CadastroUsuario> buscarUsuarioPorId(@PathVariable long id) {
+        if (repository.existsById(id)) {
+            return ResponseEntity.ok(repository.findById(id).get());
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
 }

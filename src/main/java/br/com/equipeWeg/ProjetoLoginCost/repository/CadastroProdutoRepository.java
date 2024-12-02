@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CadastroProdutoRepository extends JpaRepository<CadastroProduto, Long> {
+public interface CadastroProdutoRepository extends JpaRepository<CadastroProduto, String> {
     CadastroProduto findBySku(String sku);
 }

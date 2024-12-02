@@ -16,7 +16,7 @@ public class CadastroController {
     @PostMapping
     public CadastroUsuario salvarUsuario(@RequestBody CadastroUsuario usuario) {
 
-        CadastroUsuario usuarioSave = new CadastroUsuario(usuario.getNome(), usuario.getSobrenome(), usuario.getEmail(), usuario.getSenha());
+        CadastroUsuario usuarioSave = new CadastroUsuario(usuario.getId(), usuario.getNome(), usuario.getSobrenome(), usuario.getEmail(), usuario.getSenha());
         repository.save(usuarioSave);
 
         System.out.println(usuarioSave);

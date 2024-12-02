@@ -7,9 +7,8 @@ import jakarta.persistence.*;
 public class CadastroUsuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private long id;
+    private String id;
     @Column
     private String nome;
     @Column
@@ -25,8 +24,9 @@ public class CadastroUsuario {
         super();
     }
 
-    public CadastroUsuario(String nome, String sobrenome, String email, String senha) {
+    public CadastroUsuario(String id, String nome, String sobrenome, String email, String senha) {
         super();
+        this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -73,11 +73,11 @@ public class CadastroUsuario {
         this.senha = senha;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -42,7 +42,7 @@ public class LoginController {
     }
 
     @GetMapping("/id/{id}")
-    public ResponseEntity<CadastroUsuario> buscarUsuarioPorId(@PathVariable long id) {
+    public ResponseEntity<CadastroUsuario> buscarUsuarioPorId(@PathVariable String id) {
         if (repository.existsById(id)) {
             return ResponseEntity.ok(repository.findById(id).get());
         } else {
